@@ -40,6 +40,16 @@ def destroy
   end
 end
 
+def list_appoinment
+  begin
+    doctor = Doctor.find(params[:id])
+    patients = doctor.get_patient_list params[:date]
+    render json:{ info: patients, status: 200 }
+  rescue Exception => e
+    render json: { errors: e.message, status: 412 } 
+  end
+end
+
 private
     # Use callbacks to share common setup or constraints between actions.
     def set_patient

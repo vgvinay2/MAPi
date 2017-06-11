@@ -18,3 +18,12 @@ class Doctor < ActiveRecord::Base
     
   end
 end
+ # begin
+    #   doctor = Doctor.find doctor_id
+    #   last_time = doctor.appointments.where("created_at >= ?", Date.current).last.time_of_oppoinment if doctor.appointments.present?
+    #   return  Time.parse(appointment_time)  if last_time.nil?
+    #   new_appointment_time = Time.parse(last_time) + 20.minutes
+    #   return new_appointment_time
+    # rescue Exception => e
+    #   logger.info "set appointments error  #{e.message}"
+    # end
